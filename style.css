@@ -8,14 +8,68 @@ body {
     margin: 0;
 }
 
-.login-container {
+.auth-container {
     background-color: #ffffff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px; /* 너비 약간 증가 */
+    position: relative; /* 자식 요소 절대 위치 지정을 위해 */
+    overflow: hidden; /* 숨겨진 폼이 삐져나오지 않도록 */
+}
+
+.form-section {
+    position: absolute; /* 절대 위치로 겹쳐 놓기 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px; /* .auth-container의 padding과 동일하게 */
+    box-sizing: border-box; /* padding이 너비에 포함되도록 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.form-section.active {
+    opacity: 1;
+    visibility: visible;
+    position: static; /* 활성화될 때 정적 위치로 변경하여 공간 차지 */
+}
+
+.toggle-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.toggle-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle-link a:hover {
+    text-decoration: underline;
+}
+
+/* select 박스 기본 스타일 */
+select {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    appearance: none; /* 기본 화살표 숨기기 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
 }
 
 h1 {

@@ -3,24 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>화상 영어 사이트 - 로그인</title>
+    <title>화상 영어 사이트 - 로그인/회원가입</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>로그인</h1>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="username">아이디:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">비밀번호:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">로그인</button>
-        </form>
-        <p id="errorMessage" class="error-message"></p>
+    <div class="auth-container">
+        <div class="form-section active" id="loginSection">
+            <h1>로그인</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">아이디:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">비밀번호:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">로그인</button>
+            </form>
+            <p id="loginErrorMessage" class="error-message"></p>
+            <p class="toggle-link">계정이 없으신가요? <a href="#" id="showRegister">회원가입</a></p>
+        </div>
+
+        <div class="form-section" id="registerSection">
+            <h1>회원가입</h1>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="regUsername">아이디:</label>
+                    <input type="text" id="regUsername" name="regUsername" required>
+                </div>
+                <div class="input-group">
+                    <label for="regPassword">비밀번호:</label>
+                    <input type="password" id="regPassword" name="regPassword" required>
+                </div>
+                <div class="input-group">
+                    <label for="regConfirmPassword">비밀번호 확인:</label>
+                    <input type="password" id="regConfirmPassword" name="regConfirmPassword" required>
+                </div>
+                <div class="input-group">
+                    <label for="regRole">역할:</label>
+                    <select id="regRole" name="regRole">
+                        <option value="student">수강생</option>
+                        <option value="admin">관리자</option>
+                    </select>
+                </div>
+                <button type="submit">회원가입</button>
+            </form>
+            <p id="registerErrorMessage" class="error-message"></p>
+            <p class="toggle-link">이미 계정이 있으신가요? <a href="#" id="showLogin">로그인</a></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
