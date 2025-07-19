@@ -45,7 +45,7 @@ h1 {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #00ccff;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #12b300;
 }
 
 .error-message {
